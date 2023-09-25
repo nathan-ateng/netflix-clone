@@ -53,7 +53,7 @@ function getOriginals() {
     "https://api.themoviedb.org/3/discover/tv?api_key=19f84e11932abbc79e6d83f82d6d1045&width_networks=213";
 
   // Call fetchMovies()
-  fetchMovies(url, "n", "m");
+  fetchMovies(url, ".original__movies", "poster_path");
 }
 getOriginals();
 // Function that fetches trending movies
@@ -62,14 +62,14 @@ function getTrendingNow() {
     "https://api.themoviedb.org/3/trending/movie/week?api_key=19f84e11932abbc79e6d83f82d6d1045";
 
   // Call fetchMovies function
-  fetchMovies(url);
+  fetchMovies(url, "#trending", "backdrop_path");
 }
 
 // Function that fetches top rated movies
 function getTopRated() {
   const url =
-    "https://api.themoviedb.org/3/trending/movie/top_rated?api_key=19f84e11932abbc79e6d83f82d6d1045&language=en-US&page=1";
+    "https://api.themoviedb.org/3/movie/top_rated?api_key=19f84e11932abbc79e6d83f82d6d1045&language=en-US&page=1";
 
   // Call fetchMovies function
-  fetchMovies(url);
+  fetchMovies(url, "#top_rated", "backdrop_path");
 }
